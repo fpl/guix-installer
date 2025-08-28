@@ -19,7 +19,7 @@ die() {
 
 # Write out the channels file so it can be included
 guix time-machine -C './guix/base-channels.scm' -- \
-     describe -f channels > './guix/channels.scm'
+     describe -f channels > './guix/channels.scm' || exit 0
 
 # Build the image
 printf 'Attempting to build the image...\n\n'
